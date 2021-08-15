@@ -1,3 +1,6 @@
+import pprint
+
+
 def editdistance(str1: str, str2: str):
     n, m = len(str1), len(str2)
     dp = [[0]*(m+1) for _ in range(n+1)]
@@ -13,6 +16,7 @@ def editdistance(str1: str, str2: str):
             dp[i][j] = min(dp[i-1][j]+1,  # insertion
                            dp[i][j-1] + 1,  # deletion
                            dp[i-1][j-1]+cost)  # replacement
+    pprint.pprint(dp)
 
     return dp[n][m]
 
