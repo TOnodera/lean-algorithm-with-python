@@ -16,5 +16,6 @@ for i in range(N):
             dp[i+1][j] = dp[i][j]
         else:
             dp[i+1][j] = max(dp[i][j], dp[i][j-w[i]]+v[i])
+            print(j, w[i])
 
 print(dp[N][W])
